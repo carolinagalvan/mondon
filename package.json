@@ -1,0 +1,26 @@
+{
+  "name": "mondon",
+  "version": "1.0.0",
+  "description": "API for final project Mondon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carolinagalvan/mondon.git"
+  },
+  "author": "Carolina Galvan and Isabela Escalante",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carolinagalvan/mondon/issues"
+  },
+  "homepage": "https://github.com/carolinagalvan/mondon#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.3",
+    "nodemon": "^1.18.11"
+  }
+}
