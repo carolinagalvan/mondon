@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Donar</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!--- Bootstrapp CSS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+       <!--- Our CSS-->
+        <link rel="stylesheet" href="./css/index.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Poppins|Roboto" rel="stylesheet">
+    </head>
+
+    <body>
+
+      <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" id="sidebar"><br>
+        <a href="javascript:void(0)" onclick="close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">X</a>
+        <div class="w3-container">
+          <h3 class="w3-padding-64">Mondon</h3>
+        </div>
+        <div class="w3-bar-block">
+          <a href="index.html" class="w3-bar-item w3-button w3-hover-white">Inicio</a>
+          <a href="organizations.html" class="w3-bar-item w3-button w3-hover-white">Organizaciones y Centros</a>
+          <a href="donate.html" class="w3-bar-item w3-button w3-hover-white">Donar</a>
+          <a href="contact.html" class="w3-bar-item w3-button w3-hover-white">Contacto</a>
+        </div>
+        <img class="img-mty" src="img/mty.png" alt="Monterrey">
+      </nav>
+
+        <main>
+
+          <div class="header-donar">
+            <div class="header-donar-text">
+              <h3>Agrega los productos que quieres donar</h3>
+            </div>
+            <button type="button" class="recibo" data-toggle="popover" title="Resumen de donación" data-content="Contenido"><img src="img/recibo.png" alt="productos" width="30" height="30" align="right"></button>
+          </div>
+
+            <!-- FORM DE DONACION -->
+            <div id="categories">
+
+              <button class="collapsible">Accesorios</button>
+              <div class="content">
+                <div class="dropdown">
+                  <form class="form-inline">
+                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Agregar: </label>
+                    <select name="accesorio" class="opciones form-control mb-2 mr-sm-2">
+                      <option selected>Tipo de accesorio</option>
+                      <option value="sombrero">Sombrero</option>
+                      <option value="bufanda">Bufanda</option>
+                      <option value="guante">Guantes</option>
+                      <option value="cinto">Cintos</option>
+                      <option value="lente">Lentes</option>
+                      <option value="otra-accesorio">Otro</option>
+                    </select>
+
+                    <label class="sr-only" for="inlineFormInputName2">Cantidad</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2 cantidad" id="inlineFormInputName2" placeholder="Cantidad">
+
+                    <button class="agregar btn btn-dark"><img src="img/plus.png" alt="agregar" width="15" height="15"></button>
+                  </form>
+                  <hr>
+                </div>
+              </div>
+
+              <button class="collapsible">Comida</button>
+              <div class="content">
+                <div class="dropdown">
+                  <form class="form-inline">
+                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Agregar: </label>
+                    <select name="comida" class="opciones form-control mb-2 mr-sm-2">
+                      <option selected>Tipo de comida</option>
+                      <option value="fruta">Frutas</option>
+                      <option value="frijol">Frijoles</option>
+                      <option value="verdura">Verduras/Leguminosas</option>
+                      <option value="cereal">Granos/Cereales</option>
+                      <option value="carne">Carne</option>
+                      <option value="lacteo">Lácteos</option>
+                      <option value="otra-comida">Otro</option>
+                    </select>
+
+                    <label class="sr-only" for="inlineFormInputName2">Cantidad</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2 cantidad" id="inlineFormInputName2" placeholder="Cantidad">
+
+                    <button class="agregar btn btn-dark"><img src="img/plus.png" alt="agregar" width="15" height="15"></button>
+                  </form>
+                  <hr>
+                 </div>
+                </div>
+
+                <button class="collapsible">Electrónicos</button>
+                <div class="content">
+                  <div class="dropdown">
+                    <form class="form-inline">
+                      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Agregar: </label>
+                      <select name="electronico" class="opciones form-control mb-2 mr-sm-2">
+                        <option selected>Tipo de electrónico</option>
+                        <option value="celular">Celular</option>
+                        <option value="tele">Televisión</option>
+                        <option value="compu">Computadora</option>
+                        <option value="impresora">Impresora/Fax</option>
+                        <option value="otra-electronico">Otro</option>
+                      </select>
+
+                      <label class="sr-only" for="inlineFormInputName2">Cantidad</label>
+                      <input type="text" class="form-control mb-2 mr-sm-2 cantidad" id="inlineFormInputName2" placeholder="Cantidad">
+
+                      <button class="agregar btn btn-dark"><img src="img/plus.png" alt="agregar" width="15" height="15"></button>
+                    </form>
+                    <hr>
+                  </div>
+                </div>
+
+                <button class="collapsible">Juguetes</button>
+                <div class="content">
+                  <div class="dropdown">
+                    <form class="form-inline">
+                      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Agregar: </label>
+                      <select name="juguete" class="opciones form-control mb-2 mr-sm-2">
+                        <option selected>Tipo de juguetes</option>
+                        <option value="peluche">Peluches</option>
+                        <option value="mesa">De Mesa</option>
+                        <option value="rompecabeza">Rompecabezas</option>
+                        <option value="muñeca">Muñecas</option>
+                        <option value="educativo">Educativos</option>
+                        <option value="carro">Carros</option>
+                        <option value="otra-juguete">Otro</option>
+                      </select>
+
+                      <label class="sr-only" for="inlineFormInputName2">Cantidad</label>
+                      <input type="text" class="form-control mb-2 mr-sm-2 cantidad" id="inlineFormInputName2" placeholder="Cantidad">
+
+                      <button class="agregar btn btn-dark"><img src="img/plus.png" alt="agregar" width="15" height="15"></button>
+                    </form>
+                    <hr>
+                  </div>
+                </div>
+
+                <button class="collapsible">Libros</button>
+                  <div class="content">
+                    <div class="dropdown">
+                      <form class="form-inline">
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Agregar: </label>
+                        <select name="libro" class="opciones form-control mb-2 mr-sm-2">
+                          <option selected>Tipo de libros</option>
+                          <option value="historia">Educativos/Historia</option>
+                          <option value="fantasia">Ciencia Ficción/Fantasía</option>
+                          <option value="religion">Religión</option>
+                          <option value="misterio">Misterio</option>
+                          <option value="romance">Romance</option>
+                          <option value="otra-libro">Otro</option>
+                        </select>
+
+                        <label class="sr-only" for="inlineFormInputName2">Cantidad</label>
+                        <input type="text" class="form-control mb-2 mr-sm-2 cantidad" id="inlineFormInputName2" placeholder="Cantidad">
+
+                        <button class="agregar btn btn-dark"><img src="img/plus.png" alt="agregar" width="15" height="15"></button>
+                      </form>
+                      <hr>
+                    </div>
+                  </div>
+
+                <button class="collapsible">Mobiliario</button>
+                  <div class="content">
+                    <div class="dropdown">
+                      <form class="form-inline">
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Agregar: </label>
+                        <select name="mobiliario" class="opciones form-control mb-2 mr-sm-2">
+                          <option selected>Tipo de mobiliario</option>
+                          <option value="silla">Silla</option>
+                          <option value="tabla">Mesa</option>
+                          <option value="cama">Cama</option>
+                          <option value="librero">Librero</option>
+                          <option value="sillon">Sillón</option>
+                          <option value="otra-mobiliario">Otro</option>
+                        </select>
+
+                        <label class="sr-only" for="inlineFormInputName2">Cantidad</label>
+                        <input type="text" class="form-control mb-2 mr-sm-2 cantidad" id="inlineFormInputName2" placeholder="Cantidad">
+
+                        <button class="agregar btn btn-dark"><img src="img/plus.png" alt="agregar" width="15" height="15"></button>
+                      </form>
+                      <hr>
+                    </div>
+                  </div>
+
+                <button class="collapsible">Ropa</button>
+                <div class="content">
+                  <div class="dropdown">
+                    <form class="form-inline">
+                      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Agregar: </label>
+                      <select name="ropa" class="opciones form-control mb-2 mr-sm-2">
+                        <option selected>Tipo de prenda</option>
+                        <option value="camisa">Camisas</option>
+                        <option value="pantalon">Pantalones</option>
+                        <option value="vestido">Vestidos</option>
+                        <option value="zapato">Zapatos</option>
+                        <option value="traje-baño">Traje de baño</option>
+                        <option value="chaqueta">Chaquetas</option>
+                        <option value="otra-prenda">Otro</option>
+                      </select>
+
+                      <label class="sr-only" for="inlineFormInputName2">Cantidad</label>
+                      <input type="text" class="form-control mb-2 mr-sm-2 cantidad" id="inlineFormInputName2" placeholder="Cantidad">
+
+                      <button class="agregar btn btn-dark"><img src="img/plus.png" alt="agregar" width="15" height="15"></button>
+                    </form>
+                    <hr>
+                  </div>
+                </div>
+
+                <button class="collapsible">Otro</button>
+                <div class="content">
+                  <form class="form-inline otro-producto">
+                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Agregar: </label>
+                    <label class="sr-only" for="inlineFormInputName2">Producto</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Producto">
+
+                    <label class="sr-only" for="inlineFormInputName2">Cantidad</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2 cantidad" id="inlineFormInputName2" placeholder="Cantidad">
+
+                    <button class="agregar btn btn-dark"><img src="img/plus.png" alt="agregar" width="15" height="15"></button>
+                  </form>
+                  <hr>
+                </div>
+            </div>
+
+            <button type="submit" class="buscar-org w3-button w3-block w3-padding-large w3-margin-bottom">Buscar organizaciones</button>
+
+            <footer>
+              <ul>
+                <li> <a href="about.html">¿Quiénes Somos?</a> </li>
+                <li> <a href="testimonies.html">Testimonios</a> </li>
+              </ul>
+              <p id="footer-info"> Web Applications Development 2019 © Por Carela </p>
+            </footer>
+
+        </main>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="./js/index.js" type="text/javascript"></script>
+    </body>
+</html>
