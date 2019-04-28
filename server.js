@@ -4,10 +4,11 @@ const mongoose = require('mongoose')
 const mondonRouter = require('./router');
 const app = express();
 mongoose.Promise = global.Promise;
+
+const {DATABASE_URL, PORT} = require('./config');
 const jsonParser = bodyParser.json();
 
 app.use(express.static('public'));
-
 app.use('/mondon/api', jsonParser, mondonRouter); 
 
 let server;
@@ -50,7 +51,7 @@ function closeServer(){
         });
 }
 
-runServer(8080, 'mongodb://localhost/mondon')
+runServer(PORT, DATABASE_URL)
     .catch(err => console.log(err));
 
 module.exports = {app, runServer, closeServer}
