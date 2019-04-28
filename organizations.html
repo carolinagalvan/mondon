@@ -7,56 +7,62 @@
 
         <!--- Bootstrapp CSS-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
        <!--- Our CSS-->
         <link rel="stylesheet" href="./css/index.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Poppins|Roboto" rel="stylesheet">
     </head>
 
     <body>
-        
-        <h1>MONDON</h1>
-        <!-- <img src="." width="" height=""> -->
 
-        <ul class="nav">
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="organizations.html">Organizaciones y Centros</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="donate.html">Donar</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contacto</a>
-            </li>
-        </ul>
-       
-        <main> 
-            <div>
-                <h3>Nombre de organización</h3>
-                <img src="https://www.quickenloans.com/blog/wp-content/uploads/2015/03/donation-center.jpg" width="400px">
-                <p>Descripción</p>
-                <p>Úbicación, telefono, etc</p>
+      <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" id="sidebar"><br>
+        <a href="javascript:void(0)" onclick="close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">X</a>
+        <div class="w3-container">
+          <h3 class="w3-padding-64">Mondon</h3>
+        </div>
+        <div class="w3-bar-block">
+          <a href="index.html" class="w3-bar-item w3-button w3-hover-white">Inicio</a>
+          <a href="organizations.html" class="w3-bar-item w3-button w3-hover-white">Organizaciones y Centros</a>
+          <a href="donate.html" class="w3-bar-item w3-button w3-hover-white">Donar</a>
+          <a href="contact.html" class="w3-bar-item w3-button w3-hover-white">Contacto</a>
+        </div>
+        <img class="img-mty" src="img/mty.png" alt="Monterrey">
+      </nav>
+
+        <main>
+          <div class="header-block">
+            <h3 id="org-centro">Organizaciones y centros </h3>
+          </div>
+          <div class="lista">
+            <!-- Prueba de un div de organizacion -->
+            <div class="col-md-5 block" style="border: 5px solid #eee; margin: 20px">
+              <a href="https://www.caritas.org.mx/" target="-blank"><img src="https://pbs.twimg.com/profile_images/978657932014309376/o6uCo7RW.jpg" alt="img-org" class="org-img w3-hover-opacity" style="height: 150px; width: 150px" /></a>
+              <div class="org">
+                  <h4 class="org-nombre"><a href="https://www.caritas.org.mx/" target="-blank">Cáritas de Monterrey</a></h4>
+                  <p>Cáritas Monterrey proporciona servicios asistenciales, promoción humana y desarrollo comunitario para ayudar a la población más desprotegida.</p>
+                  <pre class="org-info"><img src="img/email.png" alt="Correo" width="25" height="20">   serviciosocial@caritas.org.mx</pre>
+                  <pre class="org-info"> <img src="img/phone.png" alt="Telefono" width="20" height="20">    81 1340 2000</pre>
+                  <pre class="org-info">Francisco Garza Sada 2810, Deportivo Obispado, 64040 Monterrey, N.L</pre>
+              </div>
             </div>
-            <div>
-                <h3>Nombre de organización 2</h3>
-                <img src="https://www.cincinnatigoodwill.org/wp-content/uploads/Western-Hills-Attended-Donation-Center.jpg" width="400px">
-                <p>Descripción</p>
-                <p>Úbicación, telefono, etc</p>
-            </div>
+
+          </div>
+
+          <hr>
+
+            <footer>
+              <ul>
+                <li> <a href="about.html">¿Quiénes Somos?</a> </li>
+                <li> <a href="testimonies.html">Testimonios</a> </li>
+              </ul>
+              <p id="footer-info"> Web Applications Development 2019 © Por Carela </p>
+            </footer>
         </main>
-
-        <hr>
-
-        <footer>
-            <a href="about.html">¿Quiénes Somos?</a>
-            <a href="testimonies.html">Testimonios</a>
-        </footer>
-
 
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> 
-        <script src="./js/index.js" type="text/javascript"></script>   
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="./js/index.js" type="text/javascript"></script>
     </body>
 </html>
