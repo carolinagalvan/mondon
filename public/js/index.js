@@ -54,3 +54,39 @@ function closeForm() {
 $(function () {
   $('[data-toggle="popover"]').popover()
 })
+
+// Get Result Organization
+$('#buscar-org').on('submit', function(event){
+  let donacion = [];
+  if ($('#results-accesorios').html != ""){
+    donacion.push("accesorios");
+  }
+  if ($('#results-comida').html != ""){
+    donacion.push("comida");
+  }
+  if ($('#results-electronicos').html != ""){
+    donacion.push("electronicos")
+  }
+  if ($('#results-juguetes').html != ""){
+    donacion.push("juguetes")
+  }
+  if ($('#results-libros').html != ""){
+    donacion.push("libros")
+  }
+  if ($('#results-mobiliario').html != ""){
+    donacion.push("mobiliario")
+  }
+  if ($('#results-ropa').html != ""){
+    donacion.push("ropa")
+  }
+  if ($('#results-otro').html != ""){
+    var listItems = $("#results-otro li");
+    listItems.each(function(li) {
+      
+    });
+  }
+
+  console.log(donacion);
+  getOrgForDonation(donacion);
+
+});
