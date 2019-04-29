@@ -5,6 +5,7 @@ function displayTestimonies(data){
     console.log(data);
     for(let i = 0; i < data.testimonies.length; i++){
 		var rate;
+		var clientImg = Math.floor((Math.random() * 4) + 1);
 		if (data.testimonies[i].rating == 1){
 			rate = "★";
 		}else if (data.testimonies[i].rating == 2){
@@ -19,7 +20,7 @@ function displayTestimonies(data){
 		$('#testimonio').append(`
 			<div class="w3-quarter">
 				<div class="w3-card w3-white">
-					<img src="./img/client${i}.jpg" alt="client-img" style="width:100%">
+					<img src="./img/client${clientImg}.jpg" alt="client-img" style="width:100%">
 					<div class="w3-container">
 						<h3>${data.testimonies[i].nombre}</h3>
 						<h5>${data.testimonies[i].organizacion}</h5>
@@ -35,7 +36,9 @@ function displayTestimonies(data){
 // Update Testimonies
 function updateTestimonies(data){
 	console.log(data);
-	var rate;
+	var rate;		
+	var clientImg = Math.floor((Math.random() * 4) + 1);
+
 	if (data.testimonies.rating == 1){
 		rate = "★";
 	}else if (data.testimonies.rating == 2){
@@ -50,7 +53,7 @@ function updateTestimonies(data){
 	$('#testimonio').append(`
 		<div class="w3-quarter">
 			<div class="w3-card w3-white">
-				<img src="./img/client1.jpg" alt="client-img" style="width:100%">
+				<img src="./img/client${clientImg}.jpg" alt="client-img" style="width:100%">
 				<div class="w3-container">
 					<h3>${data.testimonies.nombre}</h3>
 					<h5>${data.testimonies.organizacion}</h5>
