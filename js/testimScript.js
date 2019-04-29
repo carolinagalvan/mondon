@@ -41,7 +41,7 @@ function addNewTestimony(name, org, message, rating){
 	let data = {
 		nombre : name,
 		mensaje : message,
-		orgganizacion : org,
+		organizacion : org,
 		rating : rating
 	};
 
@@ -82,7 +82,7 @@ function updateTestimony(id, name, org, message, rating){
     let data = {
 		nombre : name,
 		mensaje : message,
-		orgganizacion : org,
+		organizacion : org,
 		rating : rating
 	};
     let settings = {
