@@ -55,6 +55,7 @@ $(function () {
   $('[data-toggle="popover"]').popover()
 })
 
+
 // Get Result Organization
 $('#buscar-org').on('submit', function(event){
   let donacion = [];
@@ -89,4 +90,26 @@ $('#buscar-org').on('submit', function(event){
   console.log(donacion);
   getOrgForDonation(donacion);
 
+});
+
+$("#add-accesorio").on("click", function(event) {
+	event.preventDefault();
+	let item = $("#list-accesorio option:selected").html();
+  let cantidad = $(".cantidad-accesorio").val();
+	if(item != "Tipo de accesorio" && Number(cantidad) > 0) {
+			$("#results-accesorios").append(`
+        <li class="list-group-items d-flex justify-content-between align-items-center"">
+          <button type="button" id="delete" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          ${item}
+          <span class="badge">${cantidad}</span>
+        </li>
+		`);
+	}
+})
+
+$("#results-accesorios").on("click", "#delete", function(event) {
+	event.preventDefault();
+	$(this).parent().remove();
 });
