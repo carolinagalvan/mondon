@@ -82,7 +82,7 @@ router.get('/list-testimonies', (req, res, next) => {
 });
 
 router.post('/post-testimony', (req, res, next) => {
-	let requiredFields = ['nombre', 'mensaje'];
+	let requiredFields = ['nombre', 'organizacion', 'mensaje', 'rating'];
 
 	for (let i = 0; i < requiredFields.length; i ++){
 		let currentField = requiredFields[i];
@@ -98,7 +98,9 @@ router.post('/post-testimony', (req, res, next) => {
 
     let objectToAdd = {
         nombre: req.body.nombre,
-        mensaje: req.body.mensaje
+        organizacion: req.body.organizacion,
+        mensaje: req.body.mensaje,
+        rating: req.body.rating
     };
 		
     ListTestimonies.post(objectToAdd)
@@ -121,10 +123,12 @@ router.post('/post-testimony', (req, res, next) => {
 router.put('/update-testimony/:id', (req, res, next) => {
 	let tId = req.params.id;
     let newName = req.body.nombre;
+    let newOrg = req.body.organizacion;
     let newMessage = req.body.mensaje;
+    let newRating = req.body.rating;
 
     if(newName && newMessage){
-        ListTestimonies.update(tId, newName, newMessage)
+        ListTestimonies.update(tId, newName, newOrg, newMessage, newRating)
         .then(testimony => {
             res.status(200).json({
                 message : "Successfully updated the testimony.",
@@ -140,40 +144,40 @@ router.put('/update-testimony/:id', (req, res, next) => {
             return next();
         });
     }
-    else if(newName){
-        ListTestimonies.updateName(tId, newName)
-        .then(testimony => {
-            res.status(200).json({
-                message : "Successfully updated the testimony.",
-                status : 200,
-                testimony : testimony
-            });
-        })
-        .catch( err => {
-            res.status(404).json({
-                message : "Testimony not found in the list.",
-                status : 404
-            });
-            return next();
-        });
-    }
-    else if(newMessage){
-        ListTestimonies.updateMessage(tId, newMessage)
-        .then(testimony => {
-            res.status(200).json({
-                message : "Successfully updated the testimony.",
-                status : 200,
-                testimony : testimony
-            });
-        })
-        .catch( err => {
-            res.status(404).json({
-                message : "Testimony not found in the list.",
-                status : 404
-            });
-            return next();
-        });
-    }
+    // else if(newName){
+    //     ListTestimonies.updateName(tId, newName)
+    //     .then(testimony => {
+    //         res.status(200).json({
+    //             message : "Successfully updated the testimony.",
+    //             status : 200,
+    //             testimony : testimony
+    //         });
+    //     })
+    //     .catch( err => {
+    //         res.status(404).json({
+    //             message : "Testimony not found in the list.",
+    //             status : 404
+    //         });
+    //         return next();
+    //     });
+    // }
+    // else if(newMessage){
+    //     ListTestimonies.updateMessage(tId, newMessage)
+    //     .then(testimony => {
+    //         res.status(200).json({
+    //             message : "Successfully updated the testimony.",
+    //             status : 200,
+    //             testimony : testimony
+    //         });
+    //     })
+    //     .catch( err => {
+    //         res.status(404).json({
+    //             message : "Testimony not found in the list.",
+    //             status : 404
+    //         });
+    //         return next();
+    //     });
+    // }
     else{
         res.status(404).json({
             message : "At least one field of the testimony needs to be updated.",

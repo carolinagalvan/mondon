@@ -37,10 +37,12 @@ function getTestimonies(){
 }
 
 // Add a new testimony
-function addNewTestimony(name, message){
+function addNewTestimony(name, org, message, rating){
 	let data = {
 		nombre : name,
-        mensaje : message
+		mensaje : message,
+		orgganizacion : org,
+		rating : rating
 	};
 
 	let url = './mondon/api/post-testimony';
@@ -75,11 +77,13 @@ function addNewTestimony(name, message){
 }
 
 // Update a testimony (admins only)
-function updateTestimony(id, name, message){
+function updateTestimony(id, name, org, message, rating){
     let url = `./mondn/api/update-testimony/${id}`;
     let data = {
 		nombre : name,
-        mensaje : message
+		mensaje : message,
+		orgganizacion : org,
+		rating : rating
 	};
     let settings = {
         method : 'PUT',

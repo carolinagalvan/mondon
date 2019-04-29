@@ -23,7 +23,9 @@ let orgSchema = mongoose.Schema({
 // Schema (collection) for Testimonies
 let testimoniesSchema = mongoose.Schema({
     nombre : {type: String, required: true},
-    mensaje : {type: String, required: true}
+    organizacion : {type: String, required: true},
+    mensaje : {type: String, required: true},
+    rating : {type: Number, required: true}
 });
 
 // Instancees of the database
@@ -84,8 +86,8 @@ const ListTestimonies = {
                 throw new Error(err);
             });
     },
-    update : function (tId, newName, newMessage){
-        return Testimonies.findByIdAndUpdate({_id: tId}, {$set:{nombre: newName, mensaje: newMessage}})
+    update : function (tId, newName, newOrg, newMessage, newRating){
+        return Testimonies.findByIdAndUpdate({_id: tId}, {$set:{nombre: newName, organizacion: newOrg, mensaje: newMessage, rating: newRating}})
             .then(testimony => {
                 return testimony;
             })
