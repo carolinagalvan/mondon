@@ -441,6 +441,23 @@ label, input, button {
   color: white;
 }
 
+.result-category {
+  width: 25%;
+}
+
+.btn-borrar {
+  background: none;
+  border: none;
+  font-size: 220%;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+}
+
+.badge {
+  background-color: #424A4D;
+}
+
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
 }
