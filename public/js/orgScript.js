@@ -6,9 +6,9 @@ function displayOrganizations(data){
     for(let i = 0; i < data.orgs.length; i++){
         $('.lista').append(`
             <div class="col-md-5 block" style="border: 5px solid #eee; margin: 20px">
-                <a href="${data.orgs[i].url}" target="-blank"><img src="${data.orgs[i].imagenURL}" alt="img-org" class="org-img w3-hover-opacity" style="height: 150px; width: 150px" /></a>
+                <a href="${data.orgs[i].url}" target="_blank"><img src="${data.orgs[i].imagenURL}" alt="img-org" class="org-img w3-hover-opacity" style="height: 150px; width: 150px" /></a>
                 <div class="org">
-                    <h4 class="org-nombre"><a href="${data.orgs[i].url}" target="-blank">${data.orgs[i].nombre}</a></h4>
+                    <h4 class="org-nombre"><a href="${data.orgs[i].url}" target="_blank">${data.orgs[i].nombre}</a></h4>
                     <p>${data.orgs[i].descripcion}</p>
                     <pre class="org-info"><img src="./img/email.png" alt="Correo" width="25" height="20">   ${data.orgs[i].correo}</pre>
                     <pre class="org-info"> <img src="./img/phone.png" alt="Telefono" width="20" height="20">    ${data.orgs[i].telefono}</pre>
@@ -19,8 +19,45 @@ function displayOrganizations(data){
     }
 }
 
+// Display result organizations
+function displayResultOrgs(data){
+    console.log(data);
+    for(let i = 0; i < data.orgs.length; i++){
+        $('.result-list').append(`
+            <div class="col-md-5 block" style="border: 5px solid #eee; margin: 20px">
+                <a href="${data.orgs[i].url}" target="_blank"><img src="${data.orgs[i].imagenURL}" alt="img-org" class="org-img w3-hover-opacity" style="height: 150px; width: 150px" /></a>
+                <div class="org">
+                    <h4 class="org-nombre"><a href="${data.orgs[i].url}" target="_blank">${data.orgs[i].nombre}</a></h4>
+                    <p>${data.orgs[i].descripcion}</p>
+                    <pre class="org-info"><img src="./img/email.png" alt="Correo" width="25" height="20">   ${data.orgs[i].correo}</pre>
+                    <pre class="org-info"> <img src="./img/phone.png" alt="Telefono" width="20" height="20">    ${data.orgs[i].telefono}</pre>
+                    <pre class="org-info">${data.orgs[i].direccion}</pre>
+                </div>
+            </div>
+        `);
+    }
+}
+
+// Get organizations who accept certain donation
+function getOrgForDonation(items){
+    let data = getOrganizations(false);
+    let resultOrgs = [];
+
+    for (let j = 0; j < items.length; j++){
+        for(let i = 0; i < data.orgs.length; i++){
+            if(items[j] in data.orgs[i].donativos){
+                if(!(data.orgs[i] in resultOrgs)){
+                    resultOrgs.push(data.orgs[i])
+                }
+            }
+        }
+    }
+    console.log(resultOrgs);
+    //displayResultOrgs(resultOrgs);
+}
+
 // Load all Organizations
-function getOrganizations(){
+function getOrganizations(isLoad){
     let url = "./mondon/api/list-orgs";
     let settings = {
         method : "GET",
@@ -37,12 +74,16 @@ function getOrganizations(){
             throw Error(response.statusText);
         })
         .then(responseJSON => {
-            displayOrganizations(responseJSON);
+            if(isLoad){
+                displayOrganizations(responseJSON);
+            }else{
+                return responseJSON;
+            }        
         });
 }
 
 function init(){
-	$(getOrganizations);
+	$(getOrganizations(true));
 }
 
 $(init);
