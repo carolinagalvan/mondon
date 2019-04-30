@@ -260,3 +260,15 @@ $("#admin-btn").on("click", function(event) {
     return false;
   }
 });
+
+let enviarBtn = document.getElementById("enviar-btn");
+enviarBtn.addEventListener("click", sendValidation);
+
+function sendValidation(e) {
+  if($("#correo").val() != "" && $("#mensaje").val()) {
+    alert("Mensaje enviado");
+  }
+  else {
+    e.preventDefault();
+  }
+}
