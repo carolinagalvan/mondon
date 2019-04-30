@@ -58,7 +58,7 @@
     font-size: 200%;
   }
 
-  h3, a {
+  h1, h3, a, p {
     font-family: 'Poppins', bold;
   }
 
@@ -67,6 +67,8 @@
     font-family: 'Poppins', semi-bold;
     margin-top: 2px;
     padding: 20px 20px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   footer ul {
@@ -89,9 +91,8 @@
   #footer-info {
     text-align: center;
     color : white;
-    font-family: 'Roboto', light;
     font-size: 60%;
-    margin: 0;
+    margin-left: 20%;
   }
 
   .btn {
@@ -100,7 +101,24 @@
 
   main {
     font-family: 'Roboto', light;
-    margin-left: 21%;
+    margin-left:302px;
+  }
+
+  .sidebar-btn {
+    width:14%;
+    height: 5%;
+    font-size:22px;
+    margin-left:85%;
+    color:white;
+    text-align: center;
+    border-radius: 50%;
+    padding: 0;
+    vertical-align: middle;
+  }
+
+  .sidebar-open {
+    color:white;
+    background-color: #147071;
   }
 
   .w3-bar-block {
@@ -173,24 +191,27 @@
 .contact-form h5 {
   font-family: 'Poppins', light;
   text-align: center;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
 }
 
 .contact-form img{
-  width: 1100px;
-  height: 400px;
-  margin-left: 10px;
+  width: 90%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: contain;
 }
 
 .contact-form .w3-button {
   background-color: #003D59;
-  margin-top: 10px;
+  margin-top: 30px;
   color:white;
 }
 
 .contact-label {
   margin-top: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 
 @keyframes about-proposito {
@@ -459,8 +480,13 @@ label, input, button {
 }
 
 .disabledbutton {
-    pointer-events: none;
-    opacity: 0.2;
+    visibility: hidden;
+}
+
+@media screen and (max-width: 993px) {
+  .w3-main {
+    margin-top: 5%;
+  }
 }
 
 @media screen and (max-height: 450px) {
@@ -468,7 +494,7 @@ label, input, button {
 }
 
 @media screen and (max-width: 450px) {
-    .login-form{
+    .login-form {
         margin-top: 10%;
     }
 }

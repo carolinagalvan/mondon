@@ -18,7 +18,7 @@
     <body>
 
       <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" id="sidebar"><br>
-        <a href="javascript:void(0)" onclick="close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">X</a>
+        <a href="javascript:void(0)" onclick="closeSidebar()" class="btn btn-outline-dark w3-hide-large sidebar-btn">X</a>
         <div class="w3-container">
           <h3 class="w3-padding-64">Mondon</h3>
         </div>
@@ -31,7 +31,14 @@
         <img class="img-mty" src="./img/mty.png" alt="Monterrey">
       </nav>
 
-      <main>
+      <header class="w3-container w3-top w3-hide-large w3-xlarge w3-padding sidebar-open">
+        <a href="javascript:void(0)" class="w3-button w3-margin-right" onclick="openSidebar()">☰</a>
+        <span>Mondon</span>
+      </header>
+
+      <div class="w3-overlay w3-hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="overlay"></div>
+
+      <main class="w3-main">
         <div class="first-block">
           <div class="block-text">
             <h3>¡Dona en tu comunidad!</h3>
@@ -61,13 +68,14 @@
             </div>
           </div>
         </div>
+      </main>
 
         <footer>
           <ul>
             <li> <a href="about.html">¿Quiénes Somos?</a> </li>
             <li> <a href="testimonies.html">Testimonios</a> </li>
           </ul>
-          <p id="footer-info"> Web Applications Development 2019 © Por Carela </p>
+          <p id="footer-info"> Web Applications Development 2019 © Por Carela | <a href="login.html">Admin</a></p>
         </footer>
 
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
