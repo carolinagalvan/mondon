@@ -76,7 +76,7 @@
                 <div class="dropdown">
                   <form class="form-inline">
                     <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Agregar: </label>
-                    <select name="comida" class="opciones form-control mb-2 mr-sm-2">
+                    <select name="comida" class="opciones form-control mb-2 mr-sm-2" id="list-comida">
                       <option selected>Tipo de comida</option>
                       <option value="fruta">Frutas</option>
                       <option value="frijol">Frijoles</option>
@@ -88,13 +88,13 @@
                     </select>
 
                     <label class="sr-only" for="inlineFormInputName2">Cantidad</label>
-                    <input type="text" class="form-control mb-2 mr-sm-2 cantidad" id="inlineFormInputName2" placeholder="Cantidad">
+                    <input type="text" class="form-control mb-2 mr-sm-2 cantidad cantidad-comida" id="inlineFormInputName2" placeholder="Cantidad">
 
-                    <button class="agregar btn btn-dark"><img src="./img/plus.png" alt="agregar" width="15" height="15"></button>
+                    <button class="agregar btn btn-dark" id="add-comida"><img src="./img/plus.png" alt="agregar" width="15" height="15"></button>
                   </form>
                   <hr>
                   <div class="result-category">
-                    <ul id="results-comida">
+                    <ul class="list-group" id="results-comida">
 
                     </ul>
                   </div>
@@ -106,7 +106,7 @@
                   <div class="dropdown">
                     <form class="form-inline">
                       <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Agregar: </label>
-                      <select name="electronico" class="opciones form-control mb-2 mr-sm-2">
+                      <select name="electronico" class="opciones form-control mb-2 mr-sm-2" id="list-electronico">
                         <option selected>Tipo de electrónico</option>
                         <option value="celular">Celular</option>
                         <option value="tele">Televisión</option>
@@ -117,13 +117,13 @@
                       </select>
 
                       <label class="sr-only" for="inlineFormInputName2">Cantidad</label>
-                      <input type="text" class="form-control mb-2 mr-sm-2 cantidad" id="inlineFormInputName2" placeholder="Cantidad">
+                      <input type="text" class="form-control mb-2 mr-sm-2 cantidad cantidad-electronico" id="inlineFormInputName2" placeholder="Cantidad">
 
-                      <button class="agregar btn btn-dark"><img src="./img/plus.png" alt="agregar" width="15" height="15"></button>
+                      <button class="agregar btn btn-dark" id="add-electronico"><img src="./img/plus.png" alt="agregar" width="15" height="15"></button>
                     </form>
                     <hr>
                     <div class="result-category">
-                      <ul id="results-electronicos">
+                      <ul class="list-group" id="results-electronico">
 
                       </ul>
                     </div>
@@ -135,7 +135,7 @@
                   <div class="dropdown">
                     <form class="form-inline">
                       <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Agregar: </label>
-                      <select name="juguete" class="opciones form-control mb-2 mr-sm-2">
+                      <select name="juguete" class="opciones form-control mb-2 mr-sm-2" id="list-juguete">
                         <option selected>Tipo de juguetes</option>
                         <option value="peluche">Peluches</option>
                         <option value="mesa">De Mesa</option>
@@ -147,13 +147,13 @@
                       </select>
 
                       <label class="sr-only" for="inlineFormInputName2">Cantidad</label>
-                      <input type="text" class="form-control mb-2 mr-sm-2 cantidad" id="inlineFormInputName2" placeholder="Cantidad">
+                      <input type="text" class="form-control mb-2 mr-sm-2 cantidad cantidad-juguete" id="inlineFormInputName2" placeholder="Cantidad">
 
-                      <button class="agregar btn btn-dark"><img src="./img/plus.png" alt="agregar" width="15" height="15"></button>
+                      <button class="agregar btn btn-dark" id="add-juguete"><img src="./img/plus.png" alt="agregar" width="15" height="15"></button>
                     </form>
                     <hr>
                     <div class="result-category">
-                      <ul id="results-juguetes">
+                      <ul class="list-group" id="results-juguete">
 
                       </ul>
                     </div>
@@ -165,7 +165,7 @@
                     <div class="dropdown">
                       <form class="form-inline">
                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Agregar: </label>
-                        <select name="libro" class="opciones form-control mb-2 mr-sm-2">
+                        <select name="libro" class="opciones form-control mb-2 mr-sm-2" id="list-libro">
                           <option selected>Tipo de libros</option>
                           <option value="historia">Educativos/Historia</option>
                           <option value="fantasia">Ciencia Ficción/Fantasía</option>
@@ -176,13 +176,13 @@
                         </select>
 
                         <label class="sr-only" for="inlineFormInputName2">Cantidad</label>
-                        <input type="text" class="form-control mb-2 mr-sm-2 cantidad" id="inlineFormInputName2" placeholder="Cantidad">
+                        <input type="text" class="form-control mb-2 mr-sm-2 cantidad cantidad-libro" id="inlineFormInputName2" placeholder="Cantidad">
 
-                        <button class="agregar btn btn-dark"><img src="./img/plus.png" alt="agregar" width="15" height="15"></button>
+                        <button class="agregar btn btn-dark" id="add-libro"><img src="./img/plus.png" alt="agregar" width="15" height="15"></button>
                       </form>
                       <hr>
                       <div class="result-category">
-                        <ul id="results-libros">
+                        <ul class="list-group" id="results-libro">
 
                         </ul>
                       </div>
@@ -194,7 +194,7 @@
                     <div class="dropdown">
                       <form class="form-inline">
                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Agregar: </label>
-                        <select name="mobiliario" class="opciones form-control mb-2 mr-sm-2">
+                        <select name="mobiliario" class="opciones form-control mb-2 mr-sm-2" id="list-mobiliario">
                           <option selected>Tipo de mobiliario</option>
                           <option value="silla">Silla</option>
                           <option value="tabla">Mesa</option>
@@ -205,13 +205,13 @@
                         </select>
 
                         <label class="sr-only" for="inlineFormInputName2">Cantidad</label>
-                        <input type="text" class="form-control mb-2 mr-sm-2 cantidad" id="inlineFormInputName2" placeholder="Cantidad">
+                        <input type="text" class="form-control mb-2 mr-sm-2 cantidad cantidad-mobiliario" id="inlineFormInputName2" placeholder="Cantidad">
 
-                        <button class="agregar btn btn-dark"><img src="./img/plus.png" alt="agregar" width="15" height="15"></button>
+                        <button class="agregar btn btn-dark" id="add-mobiliario"><img src="./img/plus.png" alt="agregar" width="15" height="15"></button>
                       </form>
                       <hr>
                       <div class="result-category">
-                        <ul id="results-mobiliario">
+                        <ul class="list-group" id="results-mobiliario">
 
                         </ul>
                       </div>
@@ -223,7 +223,7 @@
                   <div class="dropdown">
                     <form class="form-inline">
                       <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Agregar: </label>
-                      <select name="ropa" class="opciones form-control mb-2 mr-sm-2">
+                      <select name="ropa" class="opciones form-control mb-2 mr-sm-2" id="list-ropa">
                         <option selected>Tipo de prenda</option>
                         <option value="camisa">Camisas</option>
                         <option value="pantalon">Pantalones</option>
@@ -236,13 +236,13 @@
                       </select>
 
                       <label class="sr-only" for="inlineFormInputName2">Cantidad</label>
-                      <input type="text" class="form-control mb-2 mr-sm-2 cantidad" id="inlineFormInputName2" placeholder="Cantidad">
+                      <input type="text" class="form-control mb-2 mr-sm-2 cantidad cantidad-ropa" id="inlineFormInputName2" placeholder="Cantidad">
 
-                      <button class="agregar btn btn-dark"><img src="./img/plus.png" alt="agregar" width="15" height="15"></button>
+                      <button class="agregar btn btn-dark" id="add-ropa"><img src="./img/plus.png" alt="agregar" width="15" height="15"></button>
                     </form>
                     <hr>
                     <div class="result-category">
-                      <ul id="results-ropa">
+                      <ul class="list-group" id="results-ropa">
 
                       </ul>
                     </div>
@@ -251,9 +251,10 @@
 
                 <button class="collapsible">Misceláneo</button>
                 <div class="content">
-                  <form class="form-inline otro-producto">
+                  <div class="dropdown">
+                  <form class="form-inline">
                     <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Agregar: </label>
-                    <select name="ropa" class="opciones form-control mb-2 mr-sm-2">
+                    <select name="otro" class="opciones form-control mb-2 mr-sm-2" id="list-otro">
                       <option selected>Producto</option>
                       <option value="higiene">Artículos de higiene</option>
                       <option value="limpieza">Artículos de limpieza</option>
@@ -261,17 +262,18 @@
                     </select>
 
                     <label class="sr-only" for="inlineFormInputName2">Cantidad</label>
-                    <input type="text" class="form-control mb-2 mr-sm-2 cantidad" id="inlineFormInputName2" placeholder="Cantidad">
+                    <input type="text" class="form-control mb-2 mr-sm-2 cantidad cantidad-otro" id="inlineFormInputName2" placeholder="Cantidad">
 
-                    <button class="agregar btn btn-dark"><img src="./img/plus.png" alt="agregar" width="15" height="15"></button>
+                    <button class="agregar btn btn-dark" id="add-otro"><img src="./img/plus.png" alt="agregar" width="15" height="15"></button>
                   </form>
                   <hr>
                   <div class="result-category">
-                    <ul id="results-otro">
+                    <ul class="list-group" id="results-otro">
 
                     </ul>
                   </div>
                 </div>
+              </div>
             </div>
 
             <a href="result.html"><button type="submit" class="buscar-org w3-button w3-block w3-padding-large w3-margin-bottom" id="buscar-org">Buscar organizaciones</button></a>
