@@ -100,6 +100,28 @@ router.get('/list-testimonies', (req, res, next) => {
         });
 });
 
+router.get('/list-testimonies/:nombre', (req, res, next) => {
+    let myName = req.params.nombre;
+    //let myMessage = req.body.mensaje;
+
+    ListTestimonies.getOne(myName)
+        .then(testimony => {
+            res.status(200).json({
+                message: 'Successfully sending testimony Id for that name and message.',
+                status: 200,
+                testimony: testimony
+            });
+        })
+        .catch(err => {
+            res.status(500).json({
+                message: 'Internal server error.',
+                status: 500
+            });
+            return next();
+        });
+});
+
+
 router.post('/post-testimony', (req, res, next) => {
 	let requiredFields = ['nombre', 'organizacion', 'mensaje', 'rating'];
 
@@ -163,40 +185,6 @@ router.put('/update-testimony/:id', (req, res, next) => {
             return next();
         });
     }
-    // else if(newName){
-    //     ListTestimonies.updateName(tId, newName)
-    //     .then(testimony => {
-    //         res.status(200).json({
-    //             message : "Successfully updated the testimony.",
-    //             status : 200,
-    //             testimony : testimony
-    //         });
-    //     })
-    //     .catch( err => {
-    //         res.status(404).json({
-    //             message : "Testimony not found in the list.",
-    //             status : 404
-    //         });
-    //         return next();
-    //     });
-    // }
-    // else if(newMessage){
-    //     ListTestimonies.updateMessage(tId, newMessage)
-    //     .then(testimony => {
-    //         res.status(200).json({
-    //             message : "Successfully updated the testimony.",
-    //             status : 200,
-    //             testimony : testimony
-    //         });
-    //     })
-    //     .catch( err => {
-    //         res.status(404).json({
-    //             message : "Testimony not found in the list.",
-    //             status : 404
-    //         });
-    //         return next();
-    //     });
-    // }
     else{
         res.status(404).json({
             message : "At least one field of the testimony needs to be updated.",
