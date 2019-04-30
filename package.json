@@ -20,8 +20,12 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+<<<<<<< HEAD
+    "mongoose": "^5.5.4",
+=======
     "express-session": "^1.16.1",
     "mongoose": "^5.5.3",
+>>>>>>> 512e8e9fc126c5a5f988e07cbb4fb5eb43c324c0
     "nodemon": "^1.18.11"
   }
 }

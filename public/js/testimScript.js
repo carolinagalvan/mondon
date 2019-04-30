@@ -1,5 +1,20 @@
 // Functions for Testimony endpoints
 
+
+// let addBtn = document.getElementById("agregar-btn");
+// addBtn.addEventListener("click", validateTestimony);
+//
+// function validateTestimony(e) {
+//   e.preventDefault();
+//   console.log($("inputNombre").val());
+//   if($("inputNombre").val() == "" || $("inputOrg").val() == "" || !($("textareaTestimonio").val())) {
+//     console.log("entra a cond");
+//      $(".alert").show();
+//   }
+// }
+
+
+
 // Display all Testimonies
 function displayTestimonies(data){
     console.log(data);
@@ -36,7 +51,7 @@ function displayTestimonies(data){
 // Update Testimonies
 function updateTestimonies(data){
 	console.log(data);
-	var rate;		
+	var rate;
 	var clientImg = Math.floor((Math.random() * 4) + 1);
 
 	if (data.testimonies.rating == 1){
@@ -176,7 +191,7 @@ function deleteTestimony(id){
             'Content-Type' : 'application/json'
         }
     }
-    
+
     fetch(url, settings)
 		.then(response => {
 			if (response.ok){
@@ -200,7 +215,7 @@ function deleteTestimony(id){
 }
 
 function watchForm(){
-    
+
 }
 
 function init(){

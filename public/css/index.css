@@ -194,13 +194,15 @@
 }
 
 @keyframes about-proposito {
-  from {background-color: white;}
-  to {background-color: #FE6624;}
+  0%   {background: #FE6624;}
+  50%  {background: white;}
+  100% {background: #FE6624;}
 }
 
 @keyframes about-nosotros {
-  from {background-color: #FE6624;}
-  to {background-color: white;}
+  0%   {background: white;}
+  50%  {background: #FE6624;}
+  100% {background: white;}
 }
 
 .proposito, .nosotros{
@@ -226,14 +228,14 @@ pre {
 
 .proposito {
   background-color: white;
-  animation-name: about-nosotros;
-  animation-duration: 15s;
+  animation: about-proposito 25s;
+  animation-iteration-count: infinite;
 }
 
 .nosotros {
-  background-color: #FE6624;
-  animation-name: about-proposito;
-  animation-duration: 15s;
+  background-color: white;
+  animation: about-nosotros 25s;
+  animation-iteration-count: infinite;
 }
 
 #testimonio, #testimonio h5{
@@ -365,6 +367,11 @@ label, input, button {
   right: 10px;
 }
 
+.resumen-titulo{
+  font-size: 80%;
+  font-family: 'Poppins', semi-bold;
+}
+
 .dropdown {
   font-family: 'Poppins', light;
   padding-top: 10px;
@@ -386,6 +393,7 @@ label, input, button {
   margin-top: 10px;
   height: 50px;
   color:white;
+  font-size: 110%;
 }
 
 .container {
@@ -403,11 +411,12 @@ label, input, button {
 }
 
 .result-category {
-  width: 25%;
+  width: 30%;
 }
 
 .list-group-items {
   padding: 5px;
+  font-size: 110%;
 }
 
 .btn-borrar {
@@ -421,6 +430,34 @@ label, input, button {
 
 .badge {
   background-color: #424A4D;
+}
+
+.agregar-testimonio {
+  top: 0px;
+  background: none;
+  border: none;
+  margin-right: 2%;
+  position: absolute;
+  right: 10px;
+  padding: 0;
+  margin-top: 2%;
+}
+
+.editar-testimonio, .borrar-testimonio {
+  background: none;
+  border: none;
+}
+
+.editar-testimonio {
+  margin-right: 80px;
+}
+
+.form-testimonio {
+  text-align: left;
+}
+
+.alert{
+    display: none;
 }
 
 @media screen and (max-height: 450px) {
@@ -447,7 +484,7 @@ label, input, button {
     }
 
     .login-form{
-        margin-top: 80%;
+        margin-top: 60%;
     }
 }
 
