@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 const mondonRouter = require('./router');
@@ -10,6 +11,7 @@ const jsonParser = bodyParser.json();
 
 app.use(express.static('public'));
 app.use('/mondon/api', jsonParser, mondonRouter); 
+app.use(session({secret: 'ssshhhhh'}));
 
 let server;
 

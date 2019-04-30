@@ -97,7 +97,7 @@ $("#add-comida").on("click", function(event) {
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
 	}
-})
+});
 
 $("#results-comida").on("click", "#delete", function(event) {
 	event.preventDefault();
@@ -122,7 +122,7 @@ $("#add-electronico").on("click", function(event) {
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
 	}
-})
+});
 
 $("#results-electronico").on("click", "#delete", function(event) {
 	event.preventDefault();
@@ -147,7 +147,7 @@ $("#add-juguete").on("click", function(event) {
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
 	}
-})
+});
 
 $("#results-juguete").on("click", "#delete", function(event) {
 	event.preventDefault();
@@ -172,7 +172,7 @@ $("#add-libro").on("click", function(event) {
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
 	}
-})
+});
 
 $("#results-libro").on("click", "#delete", function(event) {
 	event.preventDefault();
@@ -197,7 +197,7 @@ $("#add-mobiliario").on("click", function(event) {
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
 	}
-})
+});
 
 $("#results-mobiliario").on("click", "#delete", function(event) {
 	event.preventDefault();
@@ -222,7 +222,7 @@ $("#add-ropa").on("click", function(event) {
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
 	}
-})
+});
 
 $("#results-ropa").on("click", "#delete", function(event) {
 	event.preventDefault();
@@ -231,11 +231,12 @@ $("#results-ropa").on("click", "#delete", function(event) {
 
 $("#add-otro").on("click", function(event) {
 	event.preventDefault();
-	let item = $("#list-otro option:selected").html();
+  let item = $("#list-otro option:selected").html();
+  let val =$("#list-otro option:selected").val();
   let cantidad = $(".cantidad-otro").val();
 	if(item != "Producto" && Number(cantidad) > 0) {
 			$("#results-otro").append(`
-        <li class="list-group-items d-flex justify-content-between align-items-center"">
+        <li class="list-group-items d-flex justify-content-between align-items-center" data-value = ${val}>
           <button type="button" id="delete" class="close" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -247,7 +248,7 @@ $("#add-otro").on("click", function(event) {
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
 	}
-})
+});
 
 $("#results-otro").on("click", "#delete", function(event) {
 	event.preventDefault();

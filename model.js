@@ -64,6 +64,15 @@ const ListOrgs = {
             .catch(err => {
                 throw new Error(err);
             });
+    },
+    orgsForDonation : function(item){
+        return Orgs.find({ donativos: item})
+            .then(org => {
+                return org;
+            })
+            .catch(err => {
+                throw new Error(err);
+            });
     }
 }
 
