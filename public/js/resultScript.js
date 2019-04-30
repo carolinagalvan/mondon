@@ -1,13 +1,15 @@
+// Global variables
 var resultOrgs = [];
+var donacion = [];
+
 // Display result organizations
 function displayResultOrgs(data){
     for(let i = 0; i < data.orgs.length; i++){
-        console.log(resultOrgs);
-        if(!(data.orgs[i].id in resultOrgs)){
+        if(jQuery.inArray(data.orgs[i].id, resultOrgs) == -1){
             $('#result-list').append(`
                 <div class="col-md-5 block" style="border: 5px solid #eee; margin: 20px">
                     <a href="${data.orgs[i].url}" target="_blank"><img src="${data.orgs[i].imagenURL}" alt="img-org" class="org-img w3-hover-opacity" style="height: 150px; width: 150px" /></a>
-                    <div class="org">
+                    <div class="org" id="${data.orgs[i].id}">
                         <h4 class="org-nombre"><a href="${data.orgs[i].url}" target="_blank">${data.orgs[i].nombre}</a></h4>
                         <p>${data.orgs[i].descripcion}</p>
                         <pre class="org-info"><img src="./img/email.png" alt="Correo" width="25" height="20">   ${data.orgs[i].correo}</pre>
@@ -16,6 +18,18 @@ function displayResultOrgs(data){
                     </div>
                 </div>
             `);
+            // Adds items accepted by the organization
+            data.orgs[i].donativos.forEach(item => {
+                if(item in donacion){
+                    $(`#${data.orgs[i].id}`).append(`
+                        ${item}&nbsp;&nbsp;
+                    `)
+                }else{
+                    $(`#${data.orgs[i].id}`).append(`
+                    ${item}&nbsp;&nbsp;
+                `)
+                }
+            });
             resultOrgs.push(data.orgs[i].id);
         }
     }
@@ -49,7 +63,6 @@ function getOrgForDonation(item){
 
 // Get Result Organization
 $('#buscar-org').on('click', function(event){
-    donacion = [];
     if ($('#results-accesorios li').toArray().length > 0){
       donacion.push("accesorios");
     }
@@ -82,4 +95,15 @@ $('#buscar-org').on('click', function(event){
         getOrgForDonation(element);
     });
 
+    $('#result-list').scrollView();
+
   });
+
+// Animation to scroll to results
+$.fn.scrollView = function () {
+    return this.each(function () {
+        $('html, body').animate({
+            scrollTop: $(this).offset().top
+        }, 1000);
+    });
+}
