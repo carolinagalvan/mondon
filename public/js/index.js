@@ -55,40 +55,46 @@ $(function () {
   $('[data-toggle="popover"]').popover()
 })
 
-
 // Get Result Organization
-$('#buscar-org').on('submit', function(event){
-  let donacion = [];
-  if ($('#results-accesorios').html != ""){
+$('#buscar-org').on('click', function(event){
+  donacion = [];
+  if ($('#results-accesorios li').toArray().length > 0){
     donacion.push("accesorios");
   }
-  if ($('#results-comida').html != ""){
-    donacion.push("comida");
+  if ($('#results-comida li').toArray().length > 0){
+    donacion.push("alimentos");
   }
-  if ($('#results-electronicos').html != ""){
-    donacion.push("electronicos")
+  if ($('#results-electronicos li').toArray().length > 0){
+    donacion.push("electronicos");
   }
-  if ($('#results-juguetes').html != ""){
-    donacion.push("juguetes")
+  if ($('#results-juguetes li').toArray().length > 0){
+    donacion.push("juguetes");
   }
-  if ($('#results-libros').html != ""){
-    donacion.push("libros")
+  if ($('#results-libros li').toArray().length > 0){
+    donacion.push("libros");
   }
-  if ($('#results-mobiliario').html != ""){
-    donacion.push("mobiliario")
+  if ($('#results-mobiliario li').toArray().length > 0){
+    donacion.push("mobiliario");
   }
-  if ($('#results-ropa').html != ""){
-    donacion.push("ropa")
+  if ($('#results-ropa li').toArray().length > 0){
+    donacion.push("ropa");
   }
-  if ($('#results-otro').html != ""){
-    var listItems = $("#results-otro li");
-    listItems.each(function(li) {
-      
+  var listItems = $('#results-otro li').toArray();
+  if (listItems.length > 0){
+    listItems.forEach(item => {
+      if($(item).text() == "Artículos de higiene"){
+        donacion.push("higiene");
+      }
+      else if($(item).text() == "Artículos de limpieza"){
+        donacion.push("limpieza");
+      }
+      else if($(item).text() == "Medicamentos"){
+        donacion.push("medicamento");
+      }
     });
   }
 
-  console.log(donacion);
-  getOrgForDonation(donacion);
+  displayResults(donacion);
 
 });
 
