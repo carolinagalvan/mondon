@@ -1,11 +1,9 @@
 var resultOrgs = [];
 // Display result organizations
 function displayResultOrgs(data){
-    console.log("ESTOY EN DISPLAY RESULTS");
-    console.log(data);
     for(let i = 0; i < data.orgs.length; i++){
+        console.log(resultOrgs);
         if(!(data.orgs[i].id in resultOrgs)){
-            console.log("ENTRE AL IF");
             $('#result-list').append(`
                 <div class="col-md-5 block" style="border: 5px solid #eee; margin: 20px">
                     <a href="${data.orgs[i].url}" target="_blank"><img src="${data.orgs[i].imagenURL}" alt="img-org" class="org-img w3-hover-opacity" style="height: 150px; width: 150px" /></a>
@@ -48,11 +46,40 @@ function getOrgForDonation(item){
 		});
 }
 
-function displayResults(donacion){
-    console.log("EN RESULT SCRIPT");
-    window.location.href = '../result.html';
-    console.log(donacion);
+
+// Get Result Organization
+$('#buscar-org').on('click', function(event){
+    donacion = [];
+    if ($('#results-accesorios li').toArray().length > 0){
+      donacion.push("accesorios");
+    }
+    if ($('#results-comida li').toArray().length > 0){
+      donacion.push("alimentos");
+    }
+    if ($('#results-electronico li').toArray().length > 0){
+      donacion.push("electronicos");
+    }
+    if ($('#results-juguete li').toArray().length > 0){
+      donacion.push("juguetes");
+    }
+    if ($('#results-libro li').toArray().length > 0){
+      donacion.push("libros");
+    }
+    if ($('#results-mobiliario li').toArray().length > 0){
+      donacion.push("mobiliario");
+    }
+    if ($('#results-ropa li').toArray().length > 0){
+      donacion.push("ropa");
+    }
+    var listItems = $('#results-otro li').toArray();
+    if (listItems.length > 0){
+      listItems.forEach(item => {
+          donacion.push($(item).attr('data-value'));
+      });
+    }
+    
     donacion.forEach(element => {
         getOrgForDonation(element);
     });
-}
+
+  });

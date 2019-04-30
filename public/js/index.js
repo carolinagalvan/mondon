@@ -55,49 +55,6 @@ $(function () {
   $('[data-toggle="popover"]').popover()
 })
 
-// Get Result Organization
-$('#buscar-org').on('click', function(event){
-  donacion = [];
-  if ($('#results-accesorios li').toArray().length > 0){
-    donacion.push("accesorios");
-  }
-  if ($('#results-comida li').toArray().length > 0){
-    donacion.push("alimentos");
-  }
-  if ($('#results-electronicos li').toArray().length > 0){
-    donacion.push("electronicos");
-  }
-  if ($('#results-juguetes li').toArray().length > 0){
-    donacion.push("juguetes");
-  }
-  if ($('#results-libros li').toArray().length > 0){
-    donacion.push("libros");
-  }
-  if ($('#results-mobiliario li').toArray().length > 0){
-    donacion.push("mobiliario");
-  }
-  if ($('#results-ropa li').toArray().length > 0){
-    donacion.push("ropa");
-  }
-  var listItems = $('#results-otro li').toArray();
-  if (listItems.length > 0){
-    listItems.forEach(item => {
-      if($(item).text() == "Artículos de higiene"){
-        donacion.push("higiene");
-      }
-      else if($(item).text() == "Artículos de limpieza"){
-        donacion.push("limpieza");
-      }
-      else if($(item).text() == "Medicamentos"){
-        donacion.push("medicamento");
-      }
-    });
-  }
-
-  displayResults(donacion);
-
-});
-
 $("#add-accesorio").on("click", function(event) {
 	event.preventDefault();
 	let item = $("#list-accesorio option:selected").html();
@@ -141,7 +98,7 @@ $("#add-comida").on("click", function(event) {
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
 	}
-})
+});
 
 $("#results-comida").on("click", "#delete", function(event) {
 	event.preventDefault();
@@ -166,7 +123,7 @@ $("#add-electronico").on("click", function(event) {
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
 	}
-})
+});
 
 $("#results-electronico").on("click", "#delete", function(event) {
 	event.preventDefault();
@@ -191,7 +148,7 @@ $("#add-juguete").on("click", function(event) {
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
 	}
-})
+});
 
 $("#results-juguete").on("click", "#delete", function(event) {
 	event.preventDefault();
@@ -216,7 +173,7 @@ $("#add-libro").on("click", function(event) {
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
 	}
-})
+});
 
 $("#results-libro").on("click", "#delete", function(event) {
 	event.preventDefault();
@@ -241,7 +198,7 @@ $("#add-mobiliario").on("click", function(event) {
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
 	}
-})
+});
 
 $("#results-mobiliario").on("click", "#delete", function(event) {
 	event.preventDefault();
@@ -266,7 +223,7 @@ $("#add-ropa").on("click", function(event) {
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
 	}
-})
+});
 
 $("#results-ropa").on("click", "#delete", function(event) {
 	event.preventDefault();
@@ -275,11 +232,12 @@ $("#results-ropa").on("click", "#delete", function(event) {
 
 $("#add-otro").on("click", function(event) {
 	event.preventDefault();
-	let item = $("#list-otro option:selected").html();
+  let item = $("#list-otro option:selected").html();
+  let val =$("#list-otro option:selected").val();
   let cantidad = $(".cantidad-otro").val();
 	if(item != "Producto" && Number(cantidad) > 0) {
 			$("#results-otro").append(`
-        <li class="list-group-items d-flex justify-content-between align-items-center"">
+        <li class="list-group-items d-flex justify-content-between align-items-center" data-value = ${val}>
           <button type="button" id="delete" class="close" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -291,7 +249,7 @@ $("#add-otro").on("click", function(event) {
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
 	}
-})
+});
 
 $("#results-otro").on("click", "#delete", function(event) {
 	event.preventDefault();
