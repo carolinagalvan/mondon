@@ -112,10 +112,188 @@ $("#add-accesorio").on("click", function(event) {
           <span class="badge">${cantidad}</span>
         </li>
 		`);
+    content = $("#results-accesorios").parent().parent().parent();
+    let scroll = content.prop('scrollHeight');
+    content.css("max-height", `${scroll}px`);
+	}
+});
+
+$("#results-accesorios").on("click", "#delete", function(event) {
+	event.preventDefault();
+	$(this).parent().remove();
+});
+
+$("#add-comida").on("click", function(event) {
+	event.preventDefault();
+	let item = $("#list-comida option:selected").html();
+  let cantidad = $(".cantidad-comida").val();
+	if(item != "Tipo de comida" && Number(cantidad) > 0) {
+			$("#results-comida").append(`
+        <li class="list-group-items d-flex justify-content-between align-items-center"">
+          <button type="button" id="delete" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          ${item}
+          <span class="badge">${cantidad}</span>
+        </li>
+		`);
+    content = $("#results-comida").parent().parent().parent();
+    let scroll = content.prop('scrollHeight');
+    content.css("max-height", `${scroll}px`);
 	}
 })
 
-$("#results-accesorios").on("click", "#delete", function(event) {
+$("#results-comida").on("click", "#delete", function(event) {
+	event.preventDefault();
+	$(this).parent().remove();
+});
+
+$("#add-electronico").on("click", function(event) {
+	event.preventDefault();
+	let item = $("#list-electronico option:selected").html();
+  let cantidad = $(".cantidad-electronico").val();
+	if(item != "Tipo de electrónico" && Number(cantidad) > 0) {
+			$("#results-electronico").append(`
+        <li class="list-group-items d-flex justify-content-between align-items-center"">
+          <button type="button" id="delete" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          ${item}
+          <span class="badge">${cantidad}</span>
+        </li>
+		`);
+    content = $("#results-electronico").parent().parent().parent();
+    let scroll = content.prop('scrollHeight');
+    content.css("max-height", `${scroll}px`);
+	}
+})
+
+$("#results-electronico").on("click", "#delete", function(event) {
+	event.preventDefault();
+	$(this).parent().remove();
+});
+
+$("#add-juguete").on("click", function(event) {
+	event.preventDefault();
+	let item = $("#list-juguete option:selected").html();
+  let cantidad = $(".cantidad-juguete").val();
+	if(item != "Tipo de juguete" && Number(cantidad) > 0) {
+			$("#results-juguete").append(`
+        <li class="list-group-items d-flex justify-content-between align-items-center"">
+          <button type="button" id="delete" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          ${item}
+          <span class="badge">${cantidad}</span>
+        </li>
+		`);
+    content = $("#results-juguete").parent().parent().parent();
+    let scroll = content.prop('scrollHeight');
+    content.css("max-height", `${scroll}px`);
+	}
+})
+
+$("#results-juguete").on("click", "#delete", function(event) {
+	event.preventDefault();
+	$(this).parent().remove();
+});
+
+$("#add-libro").on("click", function(event) {
+	event.preventDefault();
+	let item = $("#list-libro option:selected").html();
+  let cantidad = $(".cantidad-libro").val();
+	if(item != "Tipo de libros" && Number(cantidad) > 0) {
+			$("#results-libro").append(`
+        <li class="list-group-items d-flex justify-content-between align-items-center"">
+          <button type="button" id="delete" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          ${item}
+          <span class="badge">${cantidad}</span>
+        </li>
+		`);
+    content = $("#results-libro").parent().parent().parent();
+    let scroll = content.prop('scrollHeight');
+    content.css("max-height", `${scroll}px`);
+	}
+})
+
+$("#results-libro").on("click", "#delete", function(event) {
+	event.preventDefault();
+	$(this).parent().remove();
+});
+
+$("#add-mobiliario").on("click", function(event) {
+	event.preventDefault();
+	let item = $("#list-mobiliario option:selected").html();
+  let cantidad = $(".cantidad-mobiliario").val();
+	if(item != "Tipo de mobiliario" && Number(cantidad) > 0) {
+			$("#results-mobiliario").append(`
+        <li class="list-group-items d-flex justify-content-between align-items-center"">
+          <button type="button" id="delete" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          ${item}
+          <span class="badge">${cantidad}</span>
+        </li>
+		`);
+    content = $("#results-mobiliario").parent().parent().parent();
+    let scroll = content.prop('scrollHeight');
+    content.css("max-height", `${scroll}px`);
+	}
+})
+
+$("#results-mobiliario").on("click", "#delete", function(event) {
+	event.preventDefault();
+	$(this).parent().remove();
+});
+
+$("#add-ropa").on("click", function(event) {
+	event.preventDefault();
+	let item = $("#list-ropa option:selected").html();
+  let cantidad = $(".cantidad-ropa").val();
+	if(item != "Tipo de prenda" && Number(cantidad) > 0) {
+			$("#results-ropa").append(`
+        <li class="list-group-items d-flex justify-content-between align-items-center"">
+          <button type="button" id="delete" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          ${item}
+          <span class="badge">${cantidad}</span>
+        </li>
+		`);
+    content = $("#results-ropa").parent().parent().parent();
+    let scroll = content.prop('scrollHeight');
+    content.css("max-height", `${scroll}px`);
+	}
+})
+
+$("#results-ropa").on("click", "#delete", function(event) {
+	event.preventDefault();
+	$(this).parent().remove();
+});
+
+$("#add-otro").on("click", function(event) {
+	event.preventDefault();
+	let item = $("#list-otro option:selected").html();
+  let cantidad = $(".cantidad-otro").val();
+	if(item != "Producto" && Number(cantidad) > 0) {
+			$("#results-otro").append(`
+        <li class="list-group-items d-flex justify-content-between align-items-center"">
+          <button type="button" id="delete" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          ${item}
+          <span class="badge">${cantidad}</span>
+        </li>
+		`);
+    content = $("#results-otro").parent().parent().parent();
+    let scroll = content.prop('scrollHeight');
+    content.css("max-height", `${scroll}px`);
+	}
+})
+
+$("#results-otro").on("click", "#delete", function(event) {
 	event.preventDefault();
 	$(this).parent().remove();
 });
