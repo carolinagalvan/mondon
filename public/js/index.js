@@ -261,14 +261,12 @@ $("#admin-btn").on("click", function(event) {
   }
 });
 
-let enviarBtn = document.getElementById("enviar-btn");
-enviarBtn.addEventListener("click", sendValidation);
 
-function sendValidation(e) {
+$('#enviar-btn').on("click", function(event) {
   if($("#correo").val() != "" && $("#mensaje").val()) {
     alert("Mensaje enviado");
   }
   else {
-    e.preventDefault();
+    event.preventDefault();
   }
-}
+});

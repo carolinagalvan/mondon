@@ -104,7 +104,7 @@ function getTestimonies(){
 }
 
 // Add a new testimony
-function (name, org, message, rating){
+function createTestimony(name, org, message, rating){
 	let data = {
 		nombre : name,
 		mensaje : message,
