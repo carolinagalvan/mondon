@@ -43,17 +43,13 @@ function onClick(element) {
   captionText.innerHTML = element.alt;
 }
 
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
+function openBlock() {
+  document.getElementById("resumen").style.display = "block";
 }
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
+function closeBlock() {
+  document.getElementById("resumen").style.display = "none";
 }
-
-$(function () {
-  $('[data-toggle="popover"]').popover()
-})
 
 $("#add-accesorio").on("click", function(event) {
 	event.preventDefault();
@@ -72,7 +68,10 @@ $("#add-accesorio").on("click", function(event) {
     content = $("#results-accesorios").parent().parent().parent();
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
+
+
 	}
+
 });
 
 $("#results-accesorios").on("click", "#delete", function(event) {
@@ -253,4 +252,10 @@ $("#add-otro").on("click", function(event) {
 $("#results-otro").on("click", "#delete", function(event) {
 	event.preventDefault();
 	$(this).parent().remove();
+});
+
+$("#admin-btn").on("click", function(event) {
+  if($("#user").val() == "" || $("#pswd").val() == "") {
+    return false;
+  }
 });
