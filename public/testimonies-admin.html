@@ -17,21 +17,28 @@
 
     <body>
 
-      <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding disabledbutton" id="sidebar"><br>
-        <a href="javascript:void(0)" onclick="close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">X</a>
+      <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" id="sidebar"><br>
+        <a href="javascript:void(0)" onclick="closeSidebar()" class="w3-button w3-hide-large w3-display-topleft sidebar-btn">X</a>
         <div class="w3-container">
           <h3 class="w3-padding-64">Mondon</h3>
         </div>
         <div class="w3-bar-block">
           <a href="index.html" class="w3-bar-item w3-button w3-hover-white">Inicio</a>
-          <a href="organizations.html" class="w3-bar-item w3-button w3-hover-white">Organizaciones y Centros</a>
-          <a href="donate.html" class="w3-bar-item w3-button w3-hover-white">Donar</a>
-          <a href="contact.html" class="w3-bar-item w3-button w3-hover-white">Contacto</a>
+          <a href="organizations.html" class="w3-bar-item w3-button w3-hover-white disabledbutton">Organizaciones y Centros</a>
+          <a href="donate.html" class="w3-bar-item w3-button w3-hover-white disabledbutton">Donar</a>
+          <a href="contact.html" class="w3-bar-item w3-button w3-hover-white disabledbutton">Contacto</a>
         </div>
         <img class="img-mty" src="./img/mty.png" alt="Monterrey">
       </nav>
 
-        <main>
+      <header class="w3-container w3-top w3-hide-large w3-xlarge w3-padding sidebar-open">
+        <a href="javascript:void(0)" class="w3-button w3-margin-right" onclick="openSidebar()">☰</a>
+        <span>Mondon</span>
+      </header>
+
+      <div class="w3-overlay w3-hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="overlay"></div>
+
+      <main class="w3-main">
           <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="testimonio">
             <button type="button" class="agregar-testimonio" data-toggle="modal" data-target="#modalResumen"><img src="img/add.png" alt="agregar" width="55" height="50" align="right"></button>
 

@@ -18,7 +18,7 @@
     <body>
 
       <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" id="sidebar"><br>
-        <a href="javascript:void(0)" onclick="close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">X</a>
+        <a href="javascript:void(0)" onclick="closeSidebar()" class="w3-button w3-hide-large w3-display-topleft sidebar-btn">X</a>
         <div class="w3-container">
           <h3 class="w3-padding-64">Mondon</h3>
         </div>
@@ -31,22 +31,29 @@
         <img class="img-mty" src="./img/mty.png" alt="Monterrey">
       </nav>
 
-        <main>
-            <div class="contact-form">
-              <img src="./img/community.jpg" alt="Comunidad">
-              <h3> Contáctanos </h3>
-              <h5> Tus comentarios son muy importantes para nosotros. </h5>
-                <form>
-                    <div>
-                        <p class="contact-label">Correo electrónico:</p>
-                        <input class="w3-input w3-border"id="correo" type="email"/>
-                    </div>
-                    <div>
-                        <p class="contact-label">Mensaje:</p>
-                        <textarea class="w3-input w3-border" rows="7" cols="35" id="mensaje"></textarea>
-                    </div>
-                    <button type="submit" class="w3-button w3-block w3-padding-large w3-margin-bottom" id="enviar-btn">Enviar</button>
-                <form>
+      <header class="w3-container w3-top w3-hide-large w3-xlarge w3-padding sidebar-open">
+        <a href="javascript:void(0)" class="w3-button w3-margin-right" onclick="openSidebar()">☰</a>
+        <span>Mondon</span>
+      </header>
+
+      <div class="w3-overlay w3-hide-large" onclick="closeSidebar()" style="cursor:pointer" title="close side menu" id="overlay"></div>
+
+      <main class="w3-main">
+        <div class="w3-container contact-form">
+          <img src="./img/community.jpg" alt="Comunidad">
+          <h3> Contáctanos </h3>
+          <h5> Tus comentarios son muy importantes para nosotros. </h5>
+          <form>
+            <div>
+              <p class="contact-label">Correo electrónico:</p>
+              <input class="w3-input w3-border"id="correo" type="email"/>
+            </div>
+            <div>
+              <p class="contact-label">Mensaje:</p>
+              <textarea class="w3-input w3-border" rows="7" cols="35" id="mensaje"></textarea>
+            </div>
+            <button type="submit" class="w3-button w3-block w3-padding-large w3-margin-bottom" id="enviar-btn">Enviar</button>
+          </form>
             </div>
 
             <footer>
