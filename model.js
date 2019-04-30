@@ -86,6 +86,15 @@ const ListTestimonies = {
                 throw new Error(err);
             });
     },
+    getOne : function(name){
+        return Testimonies.findOne({nombre: name})
+            .then(testimony => {
+                return testimony;
+            })
+            .catch(err => {
+                throw new Error(err);
+            });
+    },
     post : function(newT){
         return Testimonies.create(newT)
             .then(testimony => {
