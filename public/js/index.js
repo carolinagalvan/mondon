@@ -35,22 +35,6 @@ function closeSidebar() {
   document.getElementById("overlay").style.display = "none";
 }
 
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-
-function openBlock() {
-  document.getElementById("resumen").style.display = "block";
-}
-
-function closeBlock() {
-  document.getElementById("resumen").style.display = "none";
-}
-
 $("#add-accesorio").on("click", function(event) {
 	event.preventDefault();
 	let item = $("#list-accesorio option:selected").html();
@@ -65,6 +49,7 @@ $("#add-accesorio").on("click", function(event) {
           <span class="badge">${cantidad}</span>
         </li>
 		`);
+    $(".form-accesorio").trigger("reset");
     content = $("#results-accesorios").parent().parent().parent();
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
@@ -93,6 +78,7 @@ $("#add-comida").on("click", function(event) {
           <span class="badge">${cantidad}</span>
         </li>
 		`);
+    $(".form-comida").trigger("reset");
     content = $("#results-comida").parent().parent().parent();
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
@@ -118,6 +104,7 @@ $("#add-electronico").on("click", function(event) {
           <span class="badge">${cantidad}</span>
         </li>
 		`);
+    $(".form-electronico").trigger("reset");
     content = $("#results-electronico").parent().parent().parent();
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
@@ -143,6 +130,7 @@ $("#add-juguete").on("click", function(event) {
           <span class="badge">${cantidad}</span>
         </li>
 		`);
+    $(".form-juguete").trigger("reset");
     content = $("#results-juguete").parent().parent().parent();
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
@@ -168,6 +156,7 @@ $("#add-libro").on("click", function(event) {
           <span class="badge">${cantidad}</span>
         </li>
 		`);
+    $(".form-libro").trigger("reset");
     content = $("#results-libro").parent().parent().parent();
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
@@ -193,6 +182,7 @@ $("#add-mobiliario").on("click", function(event) {
           <span class="badge">${cantidad}</span>
         </li>
 		`);
+    $(".form-mobiliario").trigger("reset");
     content = $("#results-mobiliario").parent().parent().parent();
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
@@ -218,6 +208,7 @@ $("#add-ropa").on("click", function(event) {
           <span class="badge">${cantidad}</span>
         </li>
 		`);
+    $(".form-ropa").trigger("reset");
     content = $("#results-ropa").parent().parent().parent();
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
@@ -244,6 +235,7 @@ $("#add-otro").on("click", function(event) {
           <span class="badge">${cantidad}</span>
         </li>
 		`);
+    $(".form-otro").trigger("reset");
     content = $("#results-otro").parent().parent().parent();
     let scroll = content.prop('scrollHeight');
     content.css("max-height", `${scroll}px`);
