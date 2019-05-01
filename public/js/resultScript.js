@@ -8,7 +8,7 @@ function displayResultOrgs(data){
         if(jQuery.inArray(data.orgs[i].id, resultOrgs) == -1){
             $('#result-list').append(`
                 <div class="col-md-5 block" style="border: 5px solid #eee; margin: 20px">
-                    <a href="${data.orgs[i].url}" target="_blank"><img src="${data.orgs[i].imagenURL}" alt="img-org" class="org-img w3-hover-opacity" style="height: 150px; width: 150px" /></a>
+                    <a href="${data.orgs[i].url}" target="_blank"><img src="${data.orgs[i].imagenURL}" alt="img-org" class="org-img w3-hover-opacity" style="height: 150px; width: 100%; object-fit: contain" /></a>
                     <div class="org" id="${data.orgs[i].id}">
                         <h4 class="org-nombre"><a href="${data.orgs[i].url}" target="_blank">${data.orgs[i].nombre}</a></h4>
                         <p>${data.orgs[i].descripcion}</p>
