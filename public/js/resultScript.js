@@ -22,11 +22,11 @@ function displayResultOrgs(data){
             data.orgs[i].donativos.forEach(item => {
                 if(item in donacion){
                     $(`#${data.orgs[i].id}`).append(`
-                        ${item}&nbsp;&nbsp;
+                        <span class="badge success">${item}&nbsp;&nbsp;</span>
                     `)
                 }else{
                     $(`#${data.orgs[i].id}`).append(`
-                    ${item}&nbsp;&nbsp;
+                    <span class="badge error">${item}&nbsp;&nbsp;</span>
                 `)
                 }
             });
@@ -53,7 +53,7 @@ function getOrgForDonation(item){
             throw Error(response.statusText);
         })
         .then(responseJSON => {
-            displayResultOrgs(responseJSON);  
+            displayResultOrgs(responseJSON);
         })
         .catch(err => {
 			console.log(err);
@@ -90,7 +90,7 @@ $('#buscar-org').on('click', function(event){
           donacion.push($(item).attr('data-value'));
       });
     }
-    
+
     donacion.forEach(element => {
         getOrgForDonation(element);
     });
