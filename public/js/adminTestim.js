@@ -244,16 +244,12 @@ function watchForm(){
 	});
 
 	$('#modificar-btn').on('click', function(event){
-    event.preventDefault();
-    let id = $('#tId').val();
-
-
-
+		event.preventDefault();
+		let id = $('#tId').val();
 		let name = $("#nuevoNombre").val();
 		let org = $("#nuevaOrg").val();
 		let message = $("#nuevoTestimonio").val();
 		let rating = parseInt($('#nuevo-rating option:selected').val());
-
 
 		if(name == "" || org == "" || message == "" || rating == "default"){
 			$(".alert").show();
@@ -262,7 +258,14 @@ function watchForm(){
             changeTestimony(id, name, org, message, rating);
 			$('#modalEditar').modal('toggle');
 		}
+	});
 
+	$('#modalBorrar').on('hidden.bs.modal', function () {
+		$(this).find('form').trigger('reset');
+	});
+
+	$('#modalEditar').on('hidden.bs.modal', function () {
+		$(this).find('form').trigger('reset');
 	});
 }
 
