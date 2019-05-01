@@ -1,37 +1,44 @@
+var imageNum;
+
 // Display all Testimonies
 function displayTestimonies(data){
+  imageNum = 1;
     $('#testimonio-list').html("");
     for(let i = 0; i < data.testimonies.length; i++){
-		var rate;
-		var clientImg = Math.floor((Math.random() * 17) + 1);
-		if (data.testimonies[i].rating == 1){
-			rate = "★";
-		}else if (data.testimonies[i].rating == 2){
-			rate = "★★";
-		}else if (data.testimonies[i].rating == 3){
-			rate = "★★★";
-		}else if (data.testimonies[i].rating == 4){
-			rate = "★★★★";
-		}else if (data.testimonies[i].rating == 5){
-			rate = "★★★★★";
-		}
-		$('#testimonio-list').append(`
-			<div class="w3-quarter">
-				<div class="w3-card w3-white">
-					<img src="./img/client${clientImg}.jpg" alt="client-img" style="width:100%">
-					<div class="w3-container">
-						<h3>${data.testimonies[i].nombre}</h3>
-						<h5>${data.testimonies[i].organizacion}</h5>
-						<p>${data.testimonies[i].mensaje}</p>
-						<p>${rate}</p>
-						<span>${data.testimonies[i]._id}</span>
-						<hr>
-						<button type="button" class="editar-testimonio" data-toggle="modal" data-target="#modalEditar"><img src="img/edit.png" alt="editar" width="35" height="30" align="right"></button>
-						<button type="button" class="borrar-testimonio" data-toggle="modal" data-target="#modalBorrar"><img src="img/delete.png" alt="borrar" width="35" height="30" align="right"></button>
-					</div>
-				</div>
-			</div>
-		`);
+  		var rate;
+  		if (data.testimonies[i].rating == 1){
+  			rate = "★";
+  		}else if (data.testimonies[i].rating == 2){
+  			rate = "★★";
+  		}else if (data.testimonies[i].rating == 3){
+  			rate = "★★★";
+  		}else if (data.testimonies[i].rating == 4){
+  			rate = "★★★★";
+  		}else if (data.testimonies[i].rating == 5){
+  			rate = "★★★★★";
+  		}
+  		$('#testimonio-list').append(`
+  			<div class="w3-quarter">
+  				<div class="w3-card w3-white">
+  					<img src="./img/client${imageNum}.jpg" alt="client-img" style="width:100%">
+  					<div class="w3-container">
+  						<h3>${data.testimonies[i].nombre}</h3>
+  						<h5>${data.testimonies[i].organizacion}</h5>
+  						<p>${data.testimonies[i].mensaje}</p>
+  						<p>${rate}</p>
+  						<span>${data.testimonies[i]._id}</span>
+  						<hr>
+  						<button type="button" class="editar-testimonio" data-toggle="modal" data-target="#modalEditar"><img src="img/edit.png" alt="editar" width="35" height="30" align="right"></button>
+  						<button type="button" class="borrar-testimonio" data-toggle="modal" data-target="#modalBorrar"><img src="img/delete.png" alt="borrar" width="35" height="30" align="right"></button>
+  					</div>
+  				</div>
+  			</div>
+  		`);
+
+      imageNum += 1;
+      if(imageNum == 17) {
+        imageNum = 1;
+      }
     }
 }
 
@@ -40,7 +47,6 @@ function displayTestimonies(data){
 // Update Testimonies
 function updateTestimonies(data){
 	var rate;
-	var clientImg = Math.floor((Math.random() * 17) + 1);
 
 	if (data.testimony.rating == 1){
 		rate = "★";
@@ -56,7 +62,7 @@ function updateTestimonies(data){
 	$('#testimonio-list').append(`
 		<div class="w3-quarter">
 			<div class="w3-card w3-white">
-				<img src="./img/client${clientImg}.jpg" alt="client-img" style="width:100%">
+				<img src="./img/client${imageNum}.jpg" alt="client-img" style="width:100%">
 				<div class="w3-container">
 					<h3>${data.testimony.nombre}</h3>
 					<h5>${data.testimony.organizacion}</h5>
@@ -70,6 +76,8 @@ function updateTestimonies(data){
 			</div>
 		</div>
 	`);
+
+  imageNum += 1;
 }
 
 
@@ -225,7 +233,7 @@ function watchForm(){
 	$('#borrar-btn').on('click', function(event){
 		event.preventDefault();
         let id = $('#borrarId').val();
-        
+
 		if(id == ""){
 			$(".alert").show();
 		}
@@ -236,14 +244,17 @@ function watchForm(){
 	});
 
 	$('#modificar-btn').on('click', function(event){
-        event.preventDefault();
-        let id = $('#tId').val();
+    event.preventDefault();
+    let id = $('#tId').val();
+
+
+
 		let name = $("#nuevoNombre").val();
 		let org = $("#nuevaOrg").val();
 		let message = $("#nuevoTestimonio").val();
 		let rating = parseInt($('#nuevo-rating option:selected').val());
-		
-		
+
+
 		if(name == "" || org == "" || message == "" || rating == "default"){
 			$(".alert").show();
 		}
@@ -251,7 +262,7 @@ function watchForm(){
             changeTestimony(id, name, org, message, rating);
 			$('#modalEditar').modal('toggle');
 		}
-		
+
 	});
 }
 
