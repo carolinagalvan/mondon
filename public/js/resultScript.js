@@ -20,14 +20,14 @@ function displayResultOrgs(data){
             `);
             // Adds items accepted by the organization
             data.orgs[i].donativos.forEach(item => {
-                if(item in donacion){
+                if(jQuery.inArray(item, donacion) >= 0){
                     $(`#${data.orgs[i].id}`).append(`
                         <span class="badge success">${item}&nbsp;&nbsp;</span>
                     `)
                 }else{
                     $(`#${data.orgs[i].id}`).append(`
-                    <span class="badge error">${item}&nbsp;&nbsp;</span>
-                `)
+                        <span class="badge error">${item}&nbsp;&nbsp;</span>
+                    `)
                 }
             });
             resultOrgs.push(data.orgs[i].id);
