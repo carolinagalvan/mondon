@@ -483,6 +483,17 @@ label, input, button {
     visibility: hidden;
 }
 
+.error {
+  font-family: 'Poppins', light;
+  background-color: grey;
+  text-decoration: line-through;
+}
+
+.success {
+  font-family: 'Poppins', light;
+  background-color: green;
+}
+
 @media screen and (max-width: 993px) {
   .w3-main {
     margin-top: 5%;
